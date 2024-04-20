@@ -19,15 +19,8 @@ provider "tidbcloud" {
   private_key = var.tidb_private_key
 }
 
-data "tidbcloud_projects" "default" {
-  page      = 1
-  page_size = 10
-}
-
-
-
 resource "tidbcloud_cluster" "jetlab" {
-  project_id     = data.tidbcloud_projects.default.id
+  project_id     = "1372813089203061287"
   name           = "jetlab-cluster"
   cluster_type   = "DEVELOPER"
   cloud_provider = "AWS"
