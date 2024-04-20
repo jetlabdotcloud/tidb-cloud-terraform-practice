@@ -6,6 +6,7 @@ terraform {
   }
 
   cloud {
+    hostname     = "app.terraform.io"
     organization = "jetlabdotcloud"
     workspaces {
       name = "tidb-terraform-practice"
