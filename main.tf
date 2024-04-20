@@ -14,14 +14,21 @@ terraform {
   }
 }
 
+data "tidbcloud_projects" "jetlabdotcloud" {
+  page      = 1
+  page_size = 10
+}
 
+output "output" {
+  value = 
+}
 provider "tidbcloud" {
   public_key = var.tidb_public_key
   private_key = var.tidb_private_key
 }
 
 resource "tidbcloud_cluster" "jetlab" {
-  project_id     = "001"
+  project_id     = data.tidbcloud_projects.jetlabdotcloud
   name           = "jetlab-cluster"
   cluster_type   = "DEVELOPER"
   cloud_provider = "AWS"
