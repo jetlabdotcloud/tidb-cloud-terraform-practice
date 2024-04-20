@@ -27,7 +27,7 @@ data "tidbcloud_projects" "default" {
 
 
 resource "tidbcloud_cluster" "jetlab" {
-  project_id     = data.tidbcloud_projects.default
+  project_id     = data.tidbcloud_projects.default.id
   name           = "jetlab-cluster"
   cluster_type   = "DEVELOPER"
   cloud_provider = "AWS"
