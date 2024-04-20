@@ -14,18 +14,17 @@ terraform {
   }
 }
 
-data "tidbcloud_projects" "jetlabdotcloud" {
-  page      = 1
-  page_size = 10
-}
-
-output "output" {
-  value = 
-}
 provider "tidbcloud" {
   public_key = var.tidb_public_key
   private_key = var.tidb_private_key
 }
+
+data "tidbcloud_projects" "default" {
+  page      = 1
+  page_size = 10
+}
+
+
 
 resource "tidbcloud_cluster" "jetlab" {
   project_id     = data.tidbcloud_projects.jetlabdotcloud
