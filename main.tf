@@ -16,8 +16,8 @@ terraform {
 
 
 provider "tidbcloud" {
-  public_key = vars.tidb_public_key
-  private_key = vars.tidb_private_key
+  public_key = var.tidb_public_key
+  private_key = var.tidb_private_key
 }
 
 resource "tidbcloud_cluster" "jetlab" {
@@ -27,7 +27,7 @@ resource "tidbcloud_cluster" "jetlab" {
   cloud_provider = "AWS"
   region         = "ap-southeast-1"
   config = {
-    root_password = vars.tidb_root_password
+    root_password = var.tidb_root_password
     port = 4000
 
   }
