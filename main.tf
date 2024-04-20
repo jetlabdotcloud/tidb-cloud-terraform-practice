@@ -27,7 +27,5 @@ resource "tidbcloud_cluster" "jetlab" {
   region         = "ap-southeast-1"
   config = {
     root_password = var.tidb_root_password
-    port = 4000
-
   }
 }
