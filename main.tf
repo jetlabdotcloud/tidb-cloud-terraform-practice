@@ -13,6 +13,7 @@ terraform {
   }
 }
 
+
 provider "tidbcloud" {
   public_key = vars.tidb_public_key
   private_key = vars.tidb_private_key
