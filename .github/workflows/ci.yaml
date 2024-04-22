@@ -41,8 +41,8 @@ jobs:
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       env:
-        TF_VAR_tidb_public_key : "${{ secrets.TF_VAR_PUBLIC_KEY }}"
-        TF_VAR_tidb_private_key : "${{ secrets.TF_VAR_PRIVATE_KEY }}"
+        TF_VAR_tidb_public_key : "${{ secrets.TF_VAR_TIDB_PUBLIC_KEY }}"
+        TF_VAR_tidb_private_key : "${{ secrets.TF_VAR_TIDB_PRIVATE_KEY }}"
         TF_VAR_tidb_root_password : "${{ secrets.TF_VAR_TIDB_ROOT_PASSWORD }}"
       run: terraform plan
 
