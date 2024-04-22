@@ -45,7 +45,7 @@ jobs:
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
     - name: Terraform Apply
       env:
-        TF_VAR_tidb_public_key : "${{ secrets.TF_VAR_PUBLIC_KEY }}"
-        TF_VAR_tidb_private_key : "${{ secrets.TF_VAR_PRIVATE_KEY }}"
+        TF_VAR_tidb_public_key : "${{ secrets.TF_VAR_TIDB_PUBLIC_KEY }}"
+        TF_VAR_tidb_private_key : "${{ secrets.TF_VAR_TIDB_PRIVATE_KEY }}"
         TF_VAR_tidb_root_password : "${{ secrets.TF_VAR_TIDB_ROOT_PASSWORD }}"
-      run: terraform apply -auto-approve
+      run: terraform apply

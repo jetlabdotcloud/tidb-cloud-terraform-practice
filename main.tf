@@ -1,3 +1,4 @@
+# Privider 
 terraform {
   required_providers {
     tidbcloud = {
@@ -19,6 +20,7 @@ provider "tidbcloud" {
   private_key = var.tidb_private_key
 }
 
+# TiDB Cluster
 resource "tidbcloud_cluster" "jetlab" {
   project_id     = "1372813089203061287"
   name           = "jetlab-cluster"
@@ -29,3 +31,6 @@ resource "tidbcloud_cluster" "jetlab" {
     root_password = var.tidb_root_password
   }
 }
+
+
+# TODO: Connect Database and create new table
